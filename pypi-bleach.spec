@@ -4,7 +4,7 @@
 #
 Name     : pypi-bleach
 Version  : 4.1.0
-Release  : 55
+Release  : 56
 URL      : https://files.pythonhosted.org/packages/6a/a3/217842324374fd3fb33db0eb4c2909ccf3ecc5a94f458088ac68581f8314/bleach-4.1.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/6a/a3/217842324374fd3fb33db0eb4c2909ccf3ecc5a94f458088ac68581f8314/bleach-4.1.0.tar.gz
 Summary  : An easy safelist-based HTML-sanitizing tool.
