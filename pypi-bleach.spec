@@ -18,14 +18,14 @@ Provides: bleach
 Provides: bleach-python
 Provides: bleach-python3
 BuildRequires : html5lib
-BuildRequires : pluggy
+BuildRequires : pypi(pluggy)
 BuildRequires : py-python
 BuildRequires : pypi(packaging)
 BuildRequires : pypi(six)
 BuildRequires : pypi(webencodings)
 BuildRequires : pytest
 BuildRequires : tox
-BuildRequires : virtualenv
+BuildRequires : pypi(virtualenv)
 
 %description
 Bleach
