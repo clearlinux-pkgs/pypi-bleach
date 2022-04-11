@@ -4,7 +4,7 @@
 #
 Name     : pypi-bleach
 Version  : 5.0.0
-Release  : 57
+Release  : 58
 URL      : https://files.pythonhosted.org/packages/54/65/5e8705bf754535f44b9c711ae655ed78908e8c5b370cfd29bdc8b8a1e93c/bleach-5.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/54/65/5e8705bf754535f44b9c711ae655ed78908e8c5b370cfd29bdc8b8a1e93c/bleach-5.0.0.tar.gz
 Summary  : An easy safelist-based HTML-sanitizing tool.
@@ -14,7 +14,6 @@ Requires: pypi-bleach-license = %{version}-%{release}
 Requires: pypi-bleach-python = %{version}-%{release}
 Requires: pypi-bleach-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : html5lib
 BuildRequires : pypi(py)
 BuildRequires : pypi(six)
 BuildRequires : pypi(webencodings)
@@ -68,7 +67,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1649376213
+export SOURCE_DATE_EPOCH=1649697983
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
