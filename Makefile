@@ -1,5 +1,5 @@
 PKG_NAME := pypi-bleach
-URL = https://files.pythonhosted.org/packages/54/65/5e8705bf754535f44b9c711ae655ed78908e8c5b370cfd29bdc8b8a1e93c/bleach-5.0.0.tar.gz
+URL = https://files.pythonhosted.org/packages/c2/5d/d5d45a38163ede3342d6ac1ca01b5d387329daadf534a25718f9a9ba818c/bleach-5.0.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
