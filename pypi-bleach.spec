@@ -4,7 +4,7 @@
 #
 Name     : pypi-bleach
 Version  : 5.0.1
-Release  : 68
+Release  : 69
 URL      : https://files.pythonhosted.org/packages/c2/5d/d5d45a38163ede3342d6ac1ca01b5d387329daadf534a25718f9a9ba818c/bleach-5.0.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c2/5d/d5d45a38163ede3342d6ac1ca01b5d387329daadf534a25718f9a9ba818c/bleach-5.0.1.tar.gz
 Summary  : An easy safelist-based HTML-sanitizing tool.
@@ -21,6 +21,9 @@ BuildRequires : pypi-pluggy
 BuildRequires : pypi-pytest
 BuildRequires : pypi-tox
 BuildRequires : pypi-virtualenv
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 ======
@@ -70,12 +73,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656353344
+export SOURCE_DATE_EPOCH=1672259771
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$FFLAGS -fno-lto "
-export FFLAGS="$FFLAGS -fno-lto "
-export CXXFLAGS="$CXXFLAGS -fno-lto "
+export CFLAGS="$CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -92,8 +95,8 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-bleach
-cp %{_builddir}/bleach-5.0.1/LICENSE %{buildroot}/usr/share/package-licenses/pypi-bleach/2712eb1e3c7cc1e80a68d7eea6acb5299222f242
-cp %{_builddir}/bleach-5.0.1/bleach/_vendor/html5lib-1.1.dist-info/LICENSE %{buildroot}/usr/share/package-licenses/pypi-bleach/5bd527c7e2297d365b33ea67a400b6ba995e3705
+cp %{_builddir}/bleach-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-bleach/2712eb1e3c7cc1e80a68d7eea6acb5299222f242 || :
+cp %{_builddir}/bleach-%{version}/bleach/_vendor/html5lib-1.1.dist-info/LICENSE %{buildroot}/usr/share/package-licenses/pypi-bleach/5bd527c7e2297d365b33ea67a400b6ba995e3705 || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
